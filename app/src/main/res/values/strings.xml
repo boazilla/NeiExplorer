@@ -24,9 +24,9 @@
     <string name="prf_types_intro">Use pre-defined types</string>
     <string name="type_keyword">Type your keyword</string>
     <string name="location_dscr">Manual 33.latt,44.long</string>
-    <string name="autogeo_dscr">Use auto geolocation</string>
-    <string name="sw_gps_on">will use loc.hardware</string>
-    <string name="sw_gps_off">dont use loc.hardware</string>
+    <string name="autogeo_dscr">Check GPS hardware</string>
+    <string name="sw_gps_on">will use</string>
+    <string name="sw_gps_off">not allowed</string>
     <string-array name="arr_keytypes">
         <item>.none</item>
         <item>accounting</item>

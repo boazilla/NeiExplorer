@@ -13,12 +13,11 @@
         android:title="@string/prf_distance_intro"/>
     <Preference
         android:key="dad_geoloc"
-        <!-- what TYPE of preference is stored on result()?.. i guess -->
         android:title="Ask Dad"
         android:persistent="false"
         android:selectable="true"
         android:enabled="true"
-        />
+        /> <!-- what TYPE of preference is stored on result()?.. i guess -->
     <EditTextPreference
         android:inputType="textAutoComplete|textAutoCorrect"
         android:key="@string/key_man_geoloc"

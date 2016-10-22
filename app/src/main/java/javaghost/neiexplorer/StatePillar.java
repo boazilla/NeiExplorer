@@ -1,3 +1,5 @@
+package javaghost.neiexplorer;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -9,17 +11,17 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.util.Set;
 
-import javaghost.neiexplorer.R;
-
 /**
  * Created by JavaGhost on 7/2/2016.
  */
 public class StatePillar {
    private static StatePillar _instance = null;
    static Context host_context;
+   static Resources res;
    static GoogleApiClient _api_Clt;
    static SharedPreferences shP;
    static SharedPreferences.Editor shE;
+
    /* preference fields */
    boolean
            _imperial,  // use imperial units
@@ -46,6 +48,8 @@ public class StatePillar {
            _hw_loc;    // retrieved from gps sensor
    static final int
            MODE_PLACE =1, MODE_MANUAL =2, MODE_HW =3;
+   /*static final boolean
+           GPS_ON =true, GPS_OFF =false;*/
 
    protected StatePillar() {
       // Exists only to defeat instantiation but...
@@ -59,9 +63,9 @@ public class StatePillar {
       if (_instance == null) {
          _instance = new StatePillar();
          host_context = main_context.getApplicationContext();
+         res = host_context.getResources();
          shP = PreferenceManager.getDefaultSharedPreferences(host_context);
          shE = linkEditor();
-
          _api_Clt = api_Clt;
       }
       return _instance;
@@ -161,7 +165,8 @@ public class StatePillar {
    public void setDadLocation(LatLng place_pick) {
       _dad_loc = place_pick;
    }
-   public void useLocation(int of_kind){
+
+   public void useLocationMode(int of_kind){
       switch (of_kind) {
          case MODE_HW:
             _now = (_hw_loc == null) ? _null : _hw_loc;
@@ -195,4 +200,11 @@ public class StatePillar {
       return new LatLng (latitude, longitude);
    }
 
+   public void setGPSon(boolean is_enabled){
+      shE.putBoolean(res.getString(R.string.key_autogps), is_enabled);
+      shE.commit();
+      _auto = is_enabled;
+      if (!is_enabled) {
+      }
+   }
 }
