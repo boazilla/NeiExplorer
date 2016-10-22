@@ -126,23 +126,12 @@
         <item>Use keyword only</item>
         <item>By keytypes only</item>
         <item>Both criteria</item>
-        <item>Search for everything</item>
     </string-array>
     <string-array name="arr_m_values">
-        <!-- DO NOT CHANGE VALUES OR ADJUST WITH STATE-PILLAR INIT -->
-        <item>word</item>
+        <item>key</item>
         <item>list</item>
-        <item>combo</item>
-        <item>around</item>
+        <item>combined</item>
     </string-array>
 
 <string name="geo_API_K">AIzaSyDS_Zu7ToZfQEZUtCGLRBEbSWQqRuufaN8</string>
-    <string name="key_imperial">use_imperial</string>
-    <string name="key_autogps">use_auto</string>
-    <string name="key_distance">lst_distance</string>
-    <string name="key_keytypes">lst_keytypes</string>
-    <string name="key_keyword">a_keyword</string>
-    <string name="key_mode">lst_mode</string>
-    <string name="key_man_geoloc">manual_geoloc</string>
-    <string name="null_geoloc">51.482522,-0.007659</string>
 </resources>

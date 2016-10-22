@@ -1,8 +1,8 @@
 package javaghost.neiexplorer;
 
 
-import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
@@ -12,8 +12,6 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.util.Log;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
@@ -27,7 +25,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
    MultiSelectListPreference keyset;
    EditTextPreference keyword, geoloc;
    Preference dadloc;
-   int PLACE_PICKER_REQUEST = 1333;
+   int PLACE_PICKER_REQUEST = 1;
 
 
    public SettingsFragment() {
@@ -40,66 +38,56 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
       // load the preferences from an xml file and build the preferences ui
       addPreferencesFromResource(R.xml.app_preferences);
 
-
-   }
-
-   @Override
-   public void onResume() {
-      super.onResume();
-      use_imperial = (CheckBoxPreference) getPreferenceManager().findPreference("use_imperial");
+      use_imperial   = (CheckBoxPreference) getPreferenceManager().findPreference("use_imperial");
       use_imperial.setOnPreferenceChangeListener(this);
       _imperial = use_imperial.isChecked();
-      lookup_distance = (ListPreference) getPreferenceManager().findPreference("lst_distance");
+      lookup_distance= (ListPreference) getPreferenceManager().findPreference("lst_distance");
       lookup_distance.setOnPreferenceChangeListener(this);
       onPreferenceChange(lookup_distance, lookup_distance.getValue());
-      use_auto = (CheckBoxPreference) getPreferenceManager().findPreference("use_auto");
+      use_auto       = (CheckBoxPreference) getPreferenceManager().findPreference("use_auto");
       use_auto.setOnPreferenceChangeListener(this);
       _auto = use_auto.isChecked();
-      lookup_mode = (ListPreference) getPreferenceManager().findPreference("lst_mode");
+      lookup_mode    = (ListPreference) getPreferenceManager().findPreference("lst_mode");
       lookup_mode.setOnPreferenceChangeListener(this);
-      keyset = (MultiSelectListPreference) getPreferenceManager().findPreference("lst_keytypes");
+      keyset         = (MultiSelectListPreference) getPreferenceManager().findPreference("lst_keytypes");
       keyset.setOnPreferenceChangeListener(this);
-      dadloc = (Preference) getPreferenceManager().findPreference("dad_geoloc");
+      dadloc         = (Preference) getPreferenceManager().findPreference("dad_geoloc");
       dadloc.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
          @Override
          public boolean onPreferenceClick(Preference preference) {
 
-            PlacePicker.IntentBuilder builder;
+          /*  PlacePicker.IntentBuilder builder;
             builder = new PlacePicker.IntentBuilder();
             try {
-
                startActivityForResult(builder.build(getActivity()), PLACE_PICKER_REQUEST);
-               Log.d("FragmentCall", "launched");
             } catch (GooglePlayServicesRepairableException e) {
-               Log.d("FragmentCall", "launch failed " + e.getConnectionStatusCode());
                e.printStackTrace();
             } catch (GooglePlayServicesNotAvailableException e) {
                e.printStackTrace();
             }
-            return true;
-            /*Uri gmmIntentUri = Uri.parse("geo:32.064,34.790?z=10&q=restaurants");
+            return true;*/
+            Uri gmmIntentUri = Uri.parse("geo:32.064,34.790?z=10&q=restaurants");
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
 //          if (mapIntent.resolveActivity(getPackageManager()) != null) {
                startActivity(mapIntent);
 //            }
-         return true;*/
+         return true;
          }
       });
-      keyword = (EditTextPreference) getPreferenceManager().findPreference("a_keyword");
+      keyword        = (EditTextPreference) getPreferenceManager().findPreference("a_keyword");
       keyword.setOnPreferenceChangeListener(this);
-      geoloc = (EditTextPreference) getPreferenceManager().findPreference("manual_geoloc");
+      geoloc         = (EditTextPreference) getPreferenceManager().findPreference("manual_geoloc");
       geoloc.setOnPreferenceChangeListener(this);
    }
 
    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-      Log.d("FragmentCall", "catched, something at least...");
       if (requestCode == PLACE_PICKER_REQUEST) {
-         if (resultCode == Activity.RESULT_OK) {
+         if (resultCode >= 0) {
             Place place = PlacePicker.getPlace(getContext(), data);
             String gotName = place.getName().toString();
             String toastMsg = String.format("Place: %s", gotName);
-            Log.i("Act.Result", toastMsg);
+            Log.i("Act.Result",toastMsg);
             dadloc.setSummary(gotName);
          }
       }
@@ -129,16 +117,14 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
             }
             break;
          case "lst_distance":
-            if (newValue != null) {
-               si_unt = Double.parseDouble(newValue.toString());
-               imp_unt = Math.rint(si_unt * 6.21371d) / 10;
-               si_unt = Math.rint(si_unt * 10) / 10;
+            si_unt = Double.parseDouble(newValue.toString());
+            imp_unt = Math.rint(si_unt * 6.21371d)  / 10;
+            si_unt = Math.rint(si_unt *10) / 10;
 
-               if (_imperial) {
-                  lookup_distance.setSummary("< " + imp_unt + " mi");
-               } else {
-                  lookup_distance.setSummary("< " + si_unt + " km");
-               }
+            if (_imperial) {
+               lookup_distance.setSummary("< " + imp_unt + " mi");
+            } else {
+               lookup_distance.setSummary("< " + si_unt + " km");
             }
             break;
 
