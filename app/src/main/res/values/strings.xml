@@ -1,0 +1,148 @@
+<resources>
+    <string name="app_name">Neighbourhood Explorer</string>
+    <string name="menu_set">Preferences...</string>
+    <string name="menu_clear">Reset to clean...</string>
+    <string name="menu_distance">Search scale</string>
+    <string-array name="arr_distances">
+        <item>Just around me</item>
+        <item>Need walk</item>
+        <item>Need car</item>
+        <item>This territory</item>
+    </string-array>
+    <string-array name="arr_d_values">
+        <item>0.805</item>
+        <item>1.61</item>
+        <item>26</item>
+        <item>50</item>
+    </string-array>
+    <string name="prf_distance_intro">Search scale</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Ghost string, if seen something went wrong...</string>
+    <string name="sw_imp_title">Use imperial units</string>
+    <string name="sw_imp_off">miles disabled</string>
+    <string name="sw_imp_on">miles enabled</string>
+    <string name="prf_types_intro">Use pre-defined types</string>
+    <string name="type_keyword">Type your keyword</string>
+    <string name="location_dscr">Manual 33.latt,44.long</string>
+    <string name="autogeo_dscr">Use auto geolocation</string>
+    <string name="sw_gps_on">will use loc.hardware</string>
+    <string name="sw_gps_off">dont use loc.hardware</string>
+    <string-array name="arr_keytypes">
+        <item>.none</item>
+        <item>accounting</item>
+        <item>airport</item>
+        <item>amusement_park</item>
+        <item>aquarium</item>
+        <item>art_gallery</item>
+        <item>atm</item>
+        <item>bakery</item>
+        <item>bank</item>
+        <item>bar</item>
+        <item>beauty_salon</item>
+        <item>bicycle_store</item>
+        <item>book_store</item>
+        <item>bowling_alley</item>
+        <item>bus_station</item>
+        <item>cafe</item>
+        <item>campground</item>
+        <item>car_dealer</item>
+        <item>car_rental</item>
+        <item>car_repair</item>
+        <item>car_wash</item>
+        <item>casino</item>
+        <item>cemetery</item>
+        <item>church</item>
+        <item>city_hall</item>
+        <item>clothing_store</item>
+        <item>convenience_store</item>
+        <item>courthouse</item>
+        <item>dentist</item>
+        <item>department_store</item>
+        <item>doctor</item>
+        <item>electrician</item>
+        <item>electronics_store</item>
+        <item>embassy</item>
+        <item>fire_station</item>
+        <item>florist</item>
+        <item>funeral_home</item>
+        <item>furniture_store</item>
+        <item>gas_station</item>
+        <item>grocery_or_supermarket</item>
+        <item>gym</item>
+        <item>hair_care</item>
+        <item>hardware_store</item>
+        <item>hindu_temple</item>
+        <item>home_goods_store</item>
+        <item>hospital</item>
+        <item>insurance_agency</item>
+        <item>jewelry_store</item>
+        <item>laundry</item>
+        <item>lawyer</item>
+        <item>library</item>
+        <item>liquor_store</item>
+        <item>local_government_office</item>
+        <item>locksmith</item>
+        <item>lodging</item>
+        <item>meal_delivery</item>
+        <item>meal_takeaway</item>
+        <item>mosque</item>
+        <item>movie_rental</item>
+        <item>movie_theater</item>
+        <item>moving_company</item>
+        <item>museum</item>
+        <item>night_club</item>
+        <item>painter</item>
+        <item>park</item>
+        <item>parking</item>
+        <item>pet_store</item>
+        <item>pharmacy</item>
+        <item>physiotherapist</item>
+        <item>plumber</item>
+        <item>police</item>
+        <item>post_office</item>
+        <item>real_estate_agency</item>
+        <item>restaurant</item>
+        <item>roofing_contractor</item>
+        <item>rv_park</item>
+        <item>school</item>
+        <item>shoe_store</item>
+        <item>shopping_mall</item>
+        <item>spa</item>
+        <item>stadium</item>
+        <item>storage</item>
+        <item>store</item>
+        <item>subway_station</item>
+        <item>synagogue</item>
+        <item>taxi_stand</item>
+        <item>train_station</item>
+        <item>transit_station</item>
+        <item>travel_agency</item>
+        <item>university</item>
+        <item>veterinary_care</item>
+        <item>zoo</item>
+        <item>.none</item>
+    </string-array>
+    <string-array name="arr_modes">
+        <item>Use keyword only</item>
+        <item>By keytypes only</item>
+        <item>Both criteria</item>
+        <item>Search for everything</item>
+    </string-array>
+    <string-array name="arr_m_values">
+        <!-- DO NOT CHANGE VALUES OR ADJUST WITH STATE-PILLAR INIT -->
+        <item>word</item>
+        <item>list</item>
+        <item>combo</item>
+        <item>around</item>
+    </string-array>
+
+<string name="geo_API_K">AIzaSyDS_Zu7ToZfQEZUtCGLRBEbSWQqRuufaN8</string>
+    <string name="key_imperial">use_imperial</string>
+    <string name="key_autogps">use_auto</string>
+    <string name="key_distance">lst_distance</string>
+    <string name="key_keytypes">lst_keytypes</string>
+    <string name="key_keyword">a_keyword</string>
+    <string name="key_mode">lst_mode</string>
+    <string name="key_man_geoloc">manual_geoloc</string>
+    <string name="null_geoloc">51.482522,-0.007659</string>
+</resources>

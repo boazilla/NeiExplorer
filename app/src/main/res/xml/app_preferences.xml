@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:title="@string/menu_distance">
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/key_imperial"
+        android:summary="@string/sw_imp_off"
+        android:title="@string/sw_imp_title"/>
+    <ListPreference
+        android:entries="@array/arr_distances"
+        android:entryValues="@array/arr_d_values"
+        android:key="@string/key_distance"
+        android:title="@string/prf_distance_intro"/>
+    <Preference
+        android:key="dad_geoloc"
+        <!-- what TYPE of preference is stored on result()?.. i guess -->
+        android:title="Ask Dad"
+        android:persistent="false"
+        android:selectable="true"
+        android:enabled="true"
+        />
+    <EditTextPreference
+        android:inputType="textAutoComplete|textAutoCorrect"
+        android:key="@string/key_man_geoloc"
+        android:title="@string/location_dscr"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/key_autogps"
+        android:title="@string/autogeo_dscr"/>
+
+    <PreferenceScreen
+        android:title="Set of keywords">
+        <EditTextPreference
+            android:inputType="textAutoComplete|textAutoCorrect"
+            android:key="@string/key_keyword"
+            android:title="@string/type_keyword"/>
+        <MultiSelectListPreference
+            android:entries="@array/arr_keytypes"
+            android:entryValues="@array/arr_keytypes"
+            android:key="@string/key_keytypes"
+            android:title="@string/prf_types_intro"/>
+        <ListPreference
+            android:summary=".none"
+            android:entries="@array/arr_modes"
+            android:entryValues="@array/arr_m_values"
+            android:key="@string/key_mode"
+            android:title="Search criteria to use"/>
+
+    </PreferenceScreen>
+</PreferenceScreen>
