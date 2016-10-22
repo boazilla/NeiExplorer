@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "582665282158",
+    "project_id": "evident-relic-133623"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582665282158:android:52db5cb25213916f",
+        "android_client_info": {
+          "package_name": "javaghost.neiexplorer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582665282158-8e9nglugdg2s3lhsmvb80ja9kll2j4u3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "javaghost.neiexplorer",
+            "certificate_hash": "B5B5F3FB2E37999D91600954F3146267034FDD6F"
+          }
+        },
+        {
+          "client_id": "582665282158-uolopsqr6d5asm17hporgp4vqp8l3nni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBiAZ7Cmwo0uiDDkT56eHdcc0GS5O1ZV0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
