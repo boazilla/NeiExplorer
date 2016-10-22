@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Neighbourhood Explorer</string>
+    <string name="app_name">NeiExplorer</string>
     <string name="menu_set">Preferences...</string>
     <string name="menu_clear">Reset to clean...</string>
     <string name="menu_distance">Search scale</string>
@@ -23,12 +23,11 @@
     <string name="sw_imp_on">miles enabled</string>
     <string name="prf_types_intro">Use pre-defined types</string>
     <string name="type_keyword">Type your keyword</string>
-    <string name="location_dscr">Manual 33.latt,44.long</string>
-    <string name="autogeo_dscr">Use auto geolocation</string>
-    <string name="sw_gps_on">will use loc.hardware</string>
-    <string name="sw_gps_off">dont use loc.hardware</string>
+    <string name="location_dscr">Manual coordinates, like 1.11,-2.22</string>
+    <string name="autogeo_dscr">Prefer hardware to manual</string>
+    <string name="sw_gps_on">will use (if permission enabled)</string>
+    <string name="sw_gps_off">now ignoring hardware</string>
     <string-array name="arr_keytypes">
-        <item>.none</item>
         <item>accounting</item>
         <item>airport</item>
         <item>amusement_park</item>
@@ -120,7 +119,6 @@
         <item>university</item>
         <item>veterinary_care</item>
         <item>zoo</item>
-        <item>.none</item>
     </string-array>
     <string-array name="arr_modes">
         <item>Use keyword only</item>
@@ -145,4 +143,12 @@
     <string name="key_mode">lst_mode</string>
     <string name="key_man_geoloc">manual_geoloc</string>
     <string name="null_geoloc">51.482522,-0.007659</string>
+    <string name="key_disabled">hw_permission_60</string>
+    <string name="hw_permission_alert">You need to allow location info permission for this App, else no link to Google Maps application is possible. Permission might being disabled for smartphone or for both applications.</string>
+    <string name="hw_permission_dlg_title">Alert - permission needed</string>
+    <string name="exit_title">Leaving Application</string>
+    <string name="exit_msg">Do you confirm exit?</string>
+    <string name="key_srvc_flag">query_n</string>
+    <string name="api_K_web">AIzaSyB9ZSENAFJl_CE4q9QT7mb3YKA1C1pZwM0</string>
+    <string name="SQL_DB_NAME">neixpl.db</string>
 </resources>
